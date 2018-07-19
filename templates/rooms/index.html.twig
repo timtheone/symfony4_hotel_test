@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rooms{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h2 class="mt-5 mb-5 text-center">Rooms</h2>
+    <div class="row">
+        {% for room in rooms %}
+        <div class="card col-lg-4">
+            <img class="card-img-top" src="images/{{ room.img }}" alt="Card image cap">
+            <div class="card-body">
+            <h5 class="card-title">Room number {{ room.id }}</h5>
+            <p class="card-text">Room type: {{ room.type }}</p>
+            <p class="card-text">Price per night: {{ room.price }}</p>
+            <a href="rooms/{{ room.id }}" class="btn btn-primary">Show this room</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
